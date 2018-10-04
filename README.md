@@ -16,7 +16,7 @@ This repo helps you to unify requests to different graphene-based blockchains
 
 # Installing
 ```
-`git clone https://github.com/sxiii/graphene-balances
+git clone https://github.com/sxiii/graphene-balances
 cd graphene-bal*
 ```
 
