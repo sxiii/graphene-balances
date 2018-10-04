@@ -1,4 +1,4 @@
-# This repo helps you to unify requests to different graphene-based blockchains
+This repo helps you to unify requests to different graphene-based blockchains
 
 # Supported:
 * steemit.com
