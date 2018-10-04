@@ -13,11 +13,13 @@ This repo helps you to unify requests to different graphene-based blockchains
 * weku.io
 
 # Installing
-`git clone https://github.com/sxiii/graphene-balances`
-`cd graphene-bal*`
+```
+`git clone https://github.com/sxiii/graphene-balances
+cd graphene-bal*
+```
 
 # Editing
-Open recently downloaded folder and the single file. In the file, find `var names = ['sxiii'] and edit it to your nickname.
+Open recently downloaded folder and the single file. In the file, find `var names = ['sxiii']` and edit it to your nickname.
 
 # Running
 Run the file like `node st.js`
