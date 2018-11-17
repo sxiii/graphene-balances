@@ -8,11 +8,12 @@ This repo helps you to unify requests to different graphene-based blockchains
 * whaleshares.io
 * vox.community
 * smoke.network
+* viz.world
+* weku.io
 
 # Work in progress:
-* viz.world
+* serey.io
 * scorum.com
-* weku.io
 
 # Installing
 ```
@@ -29,11 +30,13 @@ Run the file like `node st.js`
 
 # Sample output
 ```
-URL           Balance        VESTS                   SBD        
-------------  -------------  ----------------------  -----------
-vox           0.596 VOX      230076.684583 VESTS     0.499 GOLD 
-golos         650.589 GOLOS  183798279.977379 GESTS  406.449 GBG
-smokenetwork  0.000 SMOKE    4.197000 VESTS                     
-steemit       1.297 STEEM    206883.456950 VESTS     290.966 SBD
-whaleshares   0.000 WLS      171.751990 VESTS            
+URL           Balance         VESTS                   SBD        
+------------  --------------  ----------------------  -----------
+vox           0.596 VOX       256215.536347 VESTS     0.499 GOLD 
+golos         1173.465 GOLOS  185702311.939965 GESTS  407.810 GBG
+steemit       1.297 STEEM     240426.611388 VESTS     304.384 SBD
+whaleshares   0.000 WLS       313.404965 VESTS                   
+smokenetwork  0.000 SMOKE     8.251137 VESTS                     
+vizworld      82.446 VIZ      141.749417 SHARES                  
+weku          20.000 WEKU     10327471.678391 VESTS   4.213 WKD   
 ```
