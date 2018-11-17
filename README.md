@@ -56,8 +56,9 @@ serey         0.000 SEREY      1593822904.540777 VESTS  0.000 SRD
 ```
 
 # How to look an node's config?
-This can be used to check the CHAIN ID or other parameters of Graphene networks. Requirements are curl and jq (`sudo apt install curl jq)`
+This can be used to check the CHAIN ID or other parameters of Graphene networks:
 `curl --data '{"jsonrpc": "2.0", "method": "get_config", "params": [["1.2.0", "1.2.1"]], "id": 1}' https://serey.io/wss | jq`
+Requirements to run this command are curl and jq (`sudo apt install curl jq`).
 
 # Future
 You can help to develop the script. For example, you might like to work with cross-posting or other tasks. 
