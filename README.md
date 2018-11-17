@@ -1,6 +1,6 @@
 This repo helps you to unify requests to different graphene-based blockchains
 
-![img](https://raw.githubusercontent.com/sxiii/graphene-balances/master/Screenshot_2018-10-05_00-18-21.png)
+![Imgur](https://i.imgur.com/JLBO7RE.png)
 
 # Why we need this
 This script is aimed at few targets at the same time:
