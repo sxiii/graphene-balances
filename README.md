@@ -2,6 +2,12 @@ This repo helps you to unify requests to different graphene-based blockchains
 
 ![img](https://raw.githubusercontent.com/sxiii/graphene-balances/master/Screenshot_2018-10-05_00-18-21.png)
 
+# Why we need this
+This script is aimed at few targets at the same time:
+* Help you manage your different graphene blockchain accounts, including counting total amount of money there (saving time)
+* This script also has good collection of graphene node connection information such as API/WSS urls, chain id's and other
+* In the future it should allow you to do some more stuff, like cross-posting, etc
+
 # Supported:
 * steemit.com
 * golos.io
@@ -16,7 +22,8 @@ This repo helps you to unify requests to different graphene-based blockchains
 * serey.io
 
 # Work in progress:
-
+* bearshares.com
+* dpays.io (dsite.io)
 
 # Installing
 ```
@@ -47,3 +54,13 @@ vit           0.000 VIT        1462.926377 VESTS
 weyoume       0.000 TME                                            
 serey         0.000 SEREY      1593822904.540777 VESTS  0.000 SRD  
 ```
+
+# How to look an node's config?
+This can be used to check the CHAIN ID or other parameters of Graphene networks. Requirements are curl and jq (`sudo apt install curl jq)`
+`curl --data '{"jsonrpc": "2.0", "method": "get_config", "params": [["1.2.0", "1.2.1"]], "id": 1}' https://serey.io/wss | jq`
+
+# Future
+You can help to develop the script. For example, you might like to work with cross-posting or other tasks. 
+
+# Help in contributing
+Please let me know about your developments by publishing issues or pull requests.
