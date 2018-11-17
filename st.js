@@ -56,16 +56,20 @@ steem.config.set('address_prefix', "WEKU");
 steem.config.set('chain_id', "b24e09256ee14bab6d58bfa3a4e47b0474a73ef4d6c47eeea007848195fa085e");
 balancesread('weku');
 
+steem.api.setOptions({ url: 'https://prodnet.scorum.com' });
+steem.config.set('address_prefix', 'SCR');
+steem.config.set('chain_id', 'db4007d45f04c1403a7e66a5c66b5b1cdfc2dde8b5335d1d2f116d592ca3dbb1');
+balancesread('scorum');
+
 // still need to implement:
 // serey
-// scorum
+// 1) https://serey.io/wss
+// 2) wss://serey.io
 
-//steem.api.setOptions({ url: 'https://testnet.scorum.com/' });
-//steem.api.setOptions({ url: 'https://blog-api-dev.scorum.com/ws', convert_url: 'https://converter-dev.scorum.com/' });
-//steem.config.set('address_prefix', 'SCR');
-//steem.config.set('chain_id', 'd3c1f19a4947c296446583f988c43fd1a83818fabaf3454a0020198cb361ebd2');
-//steem.config.set('chain_id', 'db4007d45f04c1403a7e66a5c66b5b1cdfc2dde8b5335d1d2f116d592ca3dbb1');
-//balancesread('scorum');
+//steem.api.setOptions({  url: 'wss://serey.io' });
+//steem.config.set('address_prefix', "SRY");
+//steem.config.set('chain_id', "???");
+//balancesread('serey');
 
 console.log(t.toString());
 
