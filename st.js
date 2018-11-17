@@ -71,6 +71,18 @@ steem.config.set('address_prefix', "SRY");
 steem.config.set('chain_id', "3b9a062c4c1f4338f6932ec8bfc083d99369df7479467bbab1811976181b0daf");
 balancesread('serey');
 
+steem.api.setOptions({  url: 'https://api.weyoume.io' });
+steem.config.set('address_prefix', "TWYM");
+steem.config.set('chain_id', "ed8b34c6c348987271fa7128c1f89072ab07b832aa0d7057b165d83d513b461a");
+balancesread('weyoume');
+
+// dsite.io // dpays.io
+// https://api.dpays.io
+//steem.api.setOptions({  url: 'wss://d.dpays.io' });
+//steem.config.set('address_prefix', "DWB");
+//steem.config.set('chain_id', "38f14b346eb697ba04ae0f5adcfaa0a437ed3711197704aa256a14cb9b4a8f26");
+//balancesread('dpays');
+
 //steem.api.setOptions({ url: 'wss://bearshares.com' });
 //steem.config.set('address_prefix', 'SHR');
 //steem.config.set('chain_id', '0000000000000000000000000000000000000000000000000000000000000000');
