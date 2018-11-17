@@ -52,7 +52,7 @@ steem.config.set('chain_id','2040effda178d4fffff5eab7a915d4019879f5205cc5392e4bc
 balancesread('vizworld');
 
 steem.api.setOptions({  url: 'wss://one.weku.io:8190' });
-steem.config.set('address_prefix', "WEKU");
+steem.config.set('address_prefix', 'WEKU');
 steem.config.set('chain_id', "b24e09256ee14bab6d58bfa3a4e47b0474a73ef4d6c47eeea007848195fa085e");
 balancesread('weku');
 
@@ -61,15 +61,20 @@ steem.config.set('address_prefix', 'SCR');
 steem.config.set('chain_id', 'db4007d45f04c1403a7e66a5c66b5b1cdfc2dde8b5335d1d2f116d592ca3dbb1');
 balancesread('scorum');
 
-// still need to implement:
-// serey
-// 1) https://serey.io/wss
-// 2) wss://serey.io
+steem.api.setOptions({ url: 'wss://peer.vit.tube' });
+steem.config.set('address_prefix', 'VIT');
+steem.config.set('chain_id', '73f14dd4b7b07a8663be9d84300de0f65ef2ee7e27aae32bbe911c548c08f000');
+balancesread('vit');
 
-//steem.api.setOptions({  url: 'wss://serey.io' });
-//steem.config.set('address_prefix', "SRY");
-//steem.config.set('chain_id', "???");
-//balancesread('serey');
+steem.api.setOptions({  url: 'https://serey.io/wss' });
+steem.config.set('address_prefix', "SRY");
+steem.config.set('chain_id', "3b9a062c4c1f4338f6932ec8bfc083d99369df7479467bbab1811976181b0daf");
+balancesread('serey');
+
+//steem.api.setOptions({ url: 'wss://bearshares.com' });
+//steem.config.set('address_prefix', 'SHR');
+//steem.config.set('chain_id', '0000000000000000000000000000000000000000000000000000000000000000');
+//balancesread('bearshare');
 
 console.log(t.toString());
 
