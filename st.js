@@ -1,6 +1,9 @@
 var steem = require('steem');
 var names = ["sxiii"];
 
+const request = require('request');
+let options = {url: "https://api.bearshares.com",body: JSON.stringify( {"jsonrpc":"2.0", "method":"condenser_api.get_accounts", "params":[["sxiii"]], "id":1} )};
+
 var Table = require('easy-table');
 var t = new Table;
 
@@ -14,8 +17,8 @@ steem.api.getAccounts(names, function(err, result) {
 	td.forEach(function(rr) {
 	t.cell('URL', rr.url)
 	t.cell('Balance', rr.bal)
-	t.cell('VESTS', rr.vest)
-	t.cell('SBD', rr.sbd)
+	t.cell('VESTS or SHARES', rr.vest)
+	t.cell('SBD or Similar', rr.sbd)
 	t.newRow()
 	})
 
@@ -25,6 +28,25 @@ console.log(t.toString());
 	});
 }
 
+function bearsharesread(rr) {
+
+request(options, (error, response, body) => {
+    if (error) {
+        console.error('An error has occurred: ', error);
+    } else {
+	var rrr = JSON.parse(body)
+	t.cell('URL', rr)
+	t.cell('Balance', rrr.result[0].balance)
+	t.cell('VESTS or SHARES', rrr.result[0].coining_shares)
+	t.cell('SBD or Similar', rrr.result[0].bsd_balance)
+	t.newRow()
+    }
+});
+
+process.stdout.write('\033c\033[3J');
+
+}
+
 balancesread('steemit');
 
 steem.api.setOptions({ url: 'wss://ws.golos.io' });
@@ -32,7 +54,8 @@ steem.config.set('address_prefix','GLS');
 steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12');
 balancesread('golos');
 
-steem.api.setOptions({ url: 'wss://whaleshares.io/ws' });
+//steem.api.setOptions({ url: 'wss://whaleshares.io/ws' });
+steem.api.setOptions({ url: 'ws://188.166.99.136:8090' });
 steem.config.set('address_prefix', 'WLS');
 steem.config.set('chain_id', 'de999ada2ff7ed3d3d580381f229b40b5a0261aec48eb830e540080817b72866');
 balancesread('whaleshares');
@@ -76,17 +99,20 @@ steem.config.set('address_prefix', "TWYM");
 steem.config.set('chain_id', "ed8b34c6c348987271fa7128c1f89072ab07b832aa0d7057b165d83d513b461a");
 balancesread('weyoume');
 
-// dsite.io // dpays.io
-// https://api.dpays.io
+// dsite.io // dpays.io // https://api.dpays.io
+// this website is probably down
 //steem.api.setOptions({  url: 'wss://d.dpays.io' });
 //steem.config.set('address_prefix', "DWB");
 //steem.config.set('chain_id', "38f14b346eb697ba04ae0f5adcfaa0a437ed3711197704aa256a14cb9b4a8f26");
 //balancesread('dpays');
 
-//steem.api.setOptions({ url: 'wss://bearshares.com' });
+bearsharesread('bearshares');
+
+// This code is not working - have to write separate function (bearshares)
+//steem.api.setOptions({ url: 'https://api.bearshares.com' });
 //steem.config.set('address_prefix', 'SHR');
-//steem.config.set('chain_id', '0000000000000000000000000000000000000000000000000000000000000000');
-//balancesread('bearshare');
+//steem.config.set('chain_id', 'b510834141c312c2aa8837040734605f2333f1ecc4f634576372f9c12dc7e8b2');
+//balancesread('bearshares');
 
 console.log(t.toString());
 
