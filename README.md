@@ -83,16 +83,22 @@ Name of blockchain | Coin | API/HTTPS address | WSS address |	Chain_ID
 | - | - | - | - | - |
 Steemit.com | STEEM | https://api.steemit.com | | 0000000000000000000000000000000000000000000000000000000000000000
 Golos.io | GLS | | wss://ws.golos.io | 782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12
-Whaleshares.io | WLS | | wss://whaleshares.io/ws | de999ada2ff7ed3d3d580381f229b40b5a0261aec48eb830e540080817b72866
+Whaleshares.io | WLS | | https://wls.kennybll.com | de999ada2ff7ed3d3d580381f229b40b5a0261aec48eb830e540080817b72866
 Vox.community | VOX	| https://vox.community/ws | | 88a13f63de69c3a927594e07d991691c20e4cf1f34f83ae9bd26441db42a8acd
 Smoke.io | SMK | | wss://rpc.smoke.io | 1ce08345e61cd3bf91673a47fc507e7ed01550dab841fd9cdb0ab66ef576aaf0
-Viz.world | VIZ | | wss://api.viz.blckchnd.com/ws | 2040effda178d4fffff5eab7a915d4019879f5205cc5392e4bcced2b6edda0cd
-Deals.weku.io | WEKU | | wss://one.weku.io:8190 | b24e09256ee14bab6d58bfa3a4e47b0474a73ef4d6c47eeea007848195fa085e
+Viz.world | VIZ | | https://rpc.viz.lexai.host | 2040effda178d4fffff5eab7a915d4019879f5205cc5392e4bcced2b6edda0cd
+Deals.weku.io | WEKU | | https://standby.weku.io:8190 | b24e09256ee14bab6d58bfa3a4e47b0474a73ef4d6c47eeea007848195fa085e
 Scorum.com | SCR | https://prodnet.scorum.com | | db4007d45f04c1403a7e66a5c66b5b1cdfc2dde8b5335d1d2f116d592ca3dbb1
 Vit.tube | VIT | | wss://peer.vit.tube | 73f14dd4b7b07a8663be9d84300de0f65ef2ee7e27aae32bbe911c548c08f000
 Serey.io | SRY | https://serey.io/wss | | 3b9a062c4c1f4338f6932ec8bfc083d99369df7479467bbab1811976181b0daf
-WeYouMe.io | TWYM | https://api.weyoume.io | | ed8b34c6c348987271fa7128c1f89072ab07b832aa0d7057b165d83d513b461a
+WeYouMe.io | TWYM | https://node.weyoume.io | | 7d51ab195015bb72fa61f159fc91227d826a2c28fc718078356c18837d0ebbf5
 Bearshares.com | SHR | https://api.bearshares.com | | b510834141c312c2aa8837040734605f2333f1ecc4f634576372f9c12dc7e8b2
 Dpays.io* | DWB* | | wss://d.dpays.io* | 38f14b346eb697ba04ae0f5adcfaa0a437ed3711197704aa256a14cb9b4a8f26*
 
-* Currently doesen't work
+* old whaleshares node URL wss://whaleshares.io/ws no longer works - replaced with working one
+* old VIZ node URL wss://api.viz.blckchnd.com/ws no longer works - replaced with working one
+* old WeYouMe URL https://api.weyoume.io no longer works - replaced with working one
+* WeYouMe also changed the chain_Id
+* old weku URL wss://one.weku.io:8190 no longer works - replaced with working one
+
+* Currently Dpays.io doesen't work
