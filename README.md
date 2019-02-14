@@ -98,7 +98,12 @@ Dpays.io* | DWB* | | wss://d.dpays.io* | 38f14b346eb697ba04ae0f5adcfaa0a437ed371
 * old whaleshares node URL wss://whaleshares.io/ws no longer works - replaced with working one
 * old VIZ node URL wss://api.viz.blckchnd.com/ws no longer works - replaced with working one
 * old WeYouMe URL https://api.weyoume.io no longer works - replaced with working one
-* WeYouMe also changed the chain_Id
+* WeYouMe also changed the chain_Id (NB: WeYouMe was Ezira earlier)
 * old weku URL wss://one.weku.io:8190 no longer works - replaced with working one
 
 * Currently Dpays.io doesen't work
+
+# New blockchains to discover
+* APPICS (https://appics.com)
+* Dpay TestNet (https://djefferson.network; Node (HTTPS): https://net.djefferson.network; Node (WSS): wss://net.djefferson.network;  P2P Port: 6620; Jefferson API Node: https://api.djefferson.network, chain_id: f0cb578fca126f7fbd86bec9678b13c34f97237392280c72c32d34c059cbc630)
+
