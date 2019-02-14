@@ -55,7 +55,8 @@ steem.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd4
 balancesread('golos');
 
 //steem.api.setOptions({ url: 'wss://whaleshares.io/ws' });
-steem.api.setOptions({ url: 'ws://188.166.99.136:8090' });
+//steem.api.setOptions({ url: 'ws://188.166.99.136:8090' });
+steem.api.setOptions({ url: 'https://wls.kennybll.com' });
 steem.config.set('address_prefix', 'WLS');
 steem.config.set('chain_id', 'de999ada2ff7ed3d3d580381f229b40b5a0261aec48eb830e540080817b72866');
 balancesread('whaleshares');
@@ -69,12 +70,17 @@ steem.config.set('address_prefix', 'SMK');
 steem.config.set('chain_id', '1ce08345e61cd3bf91673a47fc507e7ed01550dab841fd9cdb0ab66ef576aaf0');
 balancesread('smokenetwork');
 
-steem.api.setOptions({ url: 'wss://api.viz.blckchnd.com/ws' });
+//steem.api.setOptions({ url: 'wss://api.viz.blckchnd.com/ws' });
+steem.api.setOptions({ url: 'https://rpc.viz.lexai.host' });
 steem.config.set('address_prefix','VIZ');
 steem.config.set('chain_id','2040effda178d4fffff5eab7a915d4019879f5205cc5392e4bcced2b6edda0cd');
 balancesread('vizworld');
 
-steem.api.setOptions({  url: 'wss://one.weku.io:8190' });
+//steem.api.setOptions({  url: 'wss://deals.weku.io:8190' });
+//steem.api.setOptions({  url: 'ws://one.weku.io:8190' });
+//steem.api.setOptions({  url: 'https://deals.weku.io:8190' });
+
+steem.api.setOptions({  url: 'https://standby.weku.io:8190' });
 steem.config.set('address_prefix', 'WEKU');
 steem.config.set('chain_id', "b24e09256ee14bab6d58bfa3a4e47b0474a73ef4d6c47eeea007848195fa085e");
 balancesread('weku');
@@ -94,9 +100,11 @@ steem.config.set('address_prefix', "SRY");
 steem.config.set('chain_id', "3b9a062c4c1f4338f6932ec8bfc083d99369df7479467bbab1811976181b0daf");
 balancesread('serey');
 
-steem.api.setOptions({  url: 'https://api.weyoume.io' });
+//steem.api.setOptions({  url: 'https://api.weyoume.io' });
+steem.api.setOptions({  url: 'https://node.weyoume.io' });
 steem.config.set('address_prefix', "TWYM");
-steem.config.set('chain_id', "ed8b34c6c348987271fa7128c1f89072ab07b832aa0d7057b165d83d513b461a");
+steem.config.set('chain_id',"7d51ab195015bb72fa61f159fc91227d826a2c28fc718078356c18837d0ebbf5");
+//steem.config.set('chain_id',"ed8b34c6c348987271fa7128c1f89072ab07b832aa0d7057b165d83d513b461a");
 balancesread('weyoume');
 
 // dsite.io // dpays.io // https://api.dpays.io
