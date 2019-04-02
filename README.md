@@ -30,10 +30,10 @@ This script is aimed at few targets at the same time:
 * git
 * NodeJS
 * Node modules:
-** Steem
-** Request
-** Easy-table
-** Optional node-fetch & cryptocompare (for crypto $ prices)
+* Steem
+* Request
+* Easy-table
+* Optional node-fetch & cryptocompare (for crypto $ prices)
 
 # Installing
 ```
