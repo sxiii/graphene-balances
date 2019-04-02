@@ -33,7 +33,7 @@ This script is aimed at few targets at the same time:
 ** Steem
 ** Request
 ** Easy-table
-** Optional: node-fetch & cryptocompare (for crypto $ prices)
+** Optional node-fetch & cryptocompare (for crypto $ prices)
 
 # Installing
 ```
