@@ -33,6 +33,7 @@ This script is aimed at few targets at the same time:
 ** Steem
 ** Request
 ** Easy-table
+** Optional: node-fetch & cryptocompare (for crypto $ prices)
 
 # Installing
 ```
@@ -107,3 +108,5 @@ Dpays.io* | DWB* | | wss://d.dpays.io* | 38f14b346eb697ba04ae0f5adcfaa0a437ed371
 * APPICS (https://appics.com)
 * Dpay TestNet (https://djefferson.network; Node (HTTPS): https://net.djefferson.network; Node (WSS): wss://net.djefferson.network;  P2P Port: 6620; Jefferson API Node: https://api.djefferson.network, chain_id: f0cb578fca126f7fbd86bec9678b13c34f97237392280c72c32d34c059cbc630)
 
+# Latest updates
+I've added calculation of the crypto rates (in USD or BTC) to the know crypto's. Both for first and second tokens. Based on node-fetch & cryptocompare node api.
