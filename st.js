@@ -1,5 +1,11 @@
 var steem = require('steem');
 var names = ["sxiii"];
+// if you don't want to get balances, comment out next three lines
+global.fetch = require('node-fetch')
+const cc = require('cryptocompare')
+cc.setApiKey('af6a4b3ef065b0bb84d12e423c8adc40667ca7cefa5368c0d008d5280dfefe62')
+// until here
+var steemdatausd, steemdatabtc, sbddatausd, sbddatabtc, golosdatausd, golosdatabtc, gbgdatausd, gbgdatabtc, scorumdatausd, scorumdatabtc, vitdatausd, vitdatabtc;
 
 const request = require('request');
 let options = {url: "https://api.bearshares.com",body: JSON.stringify( {"jsonrpc":"2.0", "method":"condenser_api.get_accounts", "params":[["sxiii"]], "id":1} )};
@@ -7,6 +13,23 @@ let options = {url: "https://api.bearshares.com",body: JSON.stringify( {"jsonrpc
 var Table = require('easy-table');
 var t = new Table;
 
+// you can comment the following block if you don't want to get balances
+
+cc.priceMulti(['STEEM', 'SBD*', 'GOLOS', 'GBG', 'SCR*', 'VIT'], ['USD', 'BTC']).then(prices => {
+	steemdatausd = prices.STEEM.USD; 	steemdatabtc = prices.STEEM.BTC;
+	sbddatausd = prices['SBD*'].USD; sbddatabtc = prices['SBD*'].BTC;
+	golosdatausd = prices.GOLOS.USD; golosdatabtc = prices.GOLOS.BTC;
+	gbgdatausd = prices.GBG.USD; gbgdatabtc = prices.GBG.BTC;
+  scorumdatausd = prices['SCR*'].USD; scorumdatabtc = prices['SCR*'].BTC;
+	vitdatausd = prices.VIT.USD; vitdatabtc = prices.VIT.BTC;
+
+ console.log(sbddatausd)
+	//console.log(prices);
+	//var td = [ { coin: rr, usdprice: data["balance"], btcprice: data["vesting_shares"] } ];
+
+} ).catch(console.error)
+
+// until here
 
 function balancesread(rr) {
 
@@ -15,16 +38,20 @@ steem.api.getAccounts(names, function(err, result) {
 	var td = [ { url: rr, bal: data["balance"], vest: data["vesting_shares"], sbd: data["sbd_balance"] } ];
 
 	td.forEach(function(rr) {
+  //name = eval(rr.url.toUpperCase());
 	t.cell('URL', rr.url)
-	t.cell('Balance', rr.bal)
-	t.cell('VESTS or SHARES', rr.vest)
-	t.cell('SBD or Similar', rr.sbd)
+	t.cell('Main Token', rr.bal)
+	t.cell('VESTS / SHARES / etc', rr.vest)
+	t.cell('Second Token', rr.sbd)
+	if (rr.url == 'steemit') { t.cell('Main Token $ Price', steemdatausd); t.cell('Main Token $', Math.round(parseFloat(rr.bal)*steemdatausd) ); t.cell('Second Token $ Price', sbddatausd); t.cell('Second Token $', Math.round(parseFloat(rr.sbd)*sbddatausd) ); }
+	if (rr.url == 'golos') { t.cell('Main Token $ Price', golosdatausd); t.cell('Main Token $', Math.round(parseFloat(rr.bal)*golosdatausd) ); t.cell('Second Token $ Price', gbgdatausd); t.cell('Second Token $', Math.round(parseFloat(rr.sbd)*gbgdatausd) ); }
+	if (rr.url == 'scorum') { t.cell('Main Token $ Price', scorumdatausd); t.cell('Main Token $', Math.round(parseFloat(rr.bal)*scorumdatausd)); };
+	if (rr.url == 'vit') { t.cell('Main Token $ Price', vitdatausd); t.cell('Main Token $', Math.round(parseFloat(rr.bal)*vitdatausd) ) }
 	t.newRow()
 	})
 
-process.stdout.write('\033c\033[3J');
+//process.stdout.write('\033c\033[3J');
 console.log(t.toString());
-
 	});
 }
 
@@ -36,14 +63,14 @@ request(options, (error, response, body) => {
     } else {
 	var rrr = JSON.parse(body)
 	t.cell('URL', rr)
-	t.cell('Balance', rrr.result[0].balance)
-	t.cell('VESTS or SHARES', rrr.result[0].coining_shares)
-	t.cell('SBD or Similar', rrr.result[0].bsd_balance)
+	t.cell('Main Token', rrr.result[0].balance)
+	t.cell('VESTS / SHARES / etc', rrr.result[0].coining_shares)
+	t.cell('Second Token', rrr.result[0].bsd_balance)
 	t.newRow()
     }
 });
 
-process.stdout.write('\033c\033[3J');
+//process.stdout.write('\033c\033[3J');
 
 }
 
@@ -125,5 +152,11 @@ bearsharesread('bearshares');
 console.log(t.toString());
 
 console.log('Showed all balances for '+names);
+
+maintokens = parseFloat(steemdatausd+golosdatausd+scorumdatausd+vitdatausd);
+secondtokens = parseFloat(sbddatausd+gbgdatausd);
+alltokens = parseFloat(maintokens+secondtokens);
+
+console.log('Total main token: ' + maintokens + ', total second token: ' + secondtokens + ', and all tokens together: ' + alltokens);
 
 //process.exit();
